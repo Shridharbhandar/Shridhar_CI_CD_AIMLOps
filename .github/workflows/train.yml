@@ -5,6 +5,11 @@ on:
     branches:
       - '*'
 
+env:
+  IMAGE_NAME: ai-mlops-assignment
+  REGISTRY: docker.io
+  VERSION: 1.0
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,6 +25,6 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t myapp .
-        docker tag myapp ${{ secrets.DOCKER_USERNAME }}/myapp:${{ github.sha }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/myapp:${{ github.sha }}
+        docker build -t ${IMAGE_NAME} .
+        docker tag ${IMAGE_NAME} ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
+        docker push ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
