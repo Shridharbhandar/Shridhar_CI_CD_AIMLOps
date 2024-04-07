@@ -48,4 +48,8 @@ jobs:
           else
             echo "Test failed"
             exit 1
+<<<<<<< HEAD
           fi
+=======
+          fi
+>>>>>>> a231a81bd708baaf38de725be7b236ae51f8044c

@@ -1,4 +1,9 @@
 *.pkl
 .pylintrc
+<<<<<<< HEAD
 env/
 .train.py.swp
+=======
+.train.py.swp
+env/
+>>>>>>> a231a81bd708baaf38de725be7b236ae51f8044c
