@@ -23,7 +23,3 @@ jobs:
         docker build -t myapp .
         docker tag myapp ${{ secrets.DOCKER_USERNAME }}/myapp:${{ github.sha }}
         docker push ${{ secrets.DOCKER_USERNAME }}/myapp:${{ github.sha }}
-      
-      # docker build -t Shridharbhandar/Shridhar_CI_CD_AIMLOps .
-      #   docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      #   docker push Shridharbhandar/Shridhar_CI_CD_AIMLOps
