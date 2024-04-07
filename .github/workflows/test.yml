@@ -23,7 +23,7 @@ jobs:
 
     - name: Pull and Run Docker Image
       run: |
-        score=$(docker run --rm Shridharbhandar/Shridhar_CI_CD_AIMLOps)
+        score=$(docker run --rm shridharbhandar/shridhar_ci_cd_aimlops)
         if (( $(echo "$score > 0.50" | bc -l) )); then
           echo "Test passed"
         else
