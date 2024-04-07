@@ -12,11 +12,11 @@ labels = np.sort(np.unique(y))
 y = np.array([np.where(labels == x) for x in y]).flatten()
 
 #model = LogisticRegression().fit(X, y) #Score - 0.329
-model = RandomForestClassifier(n_estimators=100, random_state=42).fit(X, y)  # Score - 0.428
+#model = RandomForestClassifier(n_estimators=100, random_state=42).fit(X, y)  # Score - 0.428
 
 
-#gbc = GradientBoostingClassifier(n_estimators=100, learning_rate=1, max_depth=25)
-#model = gbc.fit(X,y)
+gbc = GradientBoostingClassifier(n_estimators=100, learning_rate=1, max_depth=25)
+model = gbc.fit(X,y)
 
 #gbc = GradientBoostingClassifier(n_estimators=10, learning_rate=1, max_depth=100)
 #model = gbc.fit(X,y)
