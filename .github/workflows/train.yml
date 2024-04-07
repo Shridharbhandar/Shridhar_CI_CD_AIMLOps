@@ -1,8 +1,8 @@
 name: Train
 
 on:
-  push:
-    branches:
+  pull_request:
+    branches: 
       - '*'
 
 env:
