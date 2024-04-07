@@ -41,14 +41,14 @@ jobs:
         run: echo "The Login is success!!!"
 
       - name: Pull Docker image
-        run: docker pull ${IMAGE_NAME} ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
+        run: docker pull ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
 
       - name: Testing this step
         run: echo "The pull is success!!!"
 
       - name: Pull and Run the Docker Image 
         run: |
-          score=$(docker run --rm ${IMAGE_NAME} ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
+          score=$(docker run --rm ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
           if (( $(echo "$score > 0.50" | bc -l) )); then
             echo "Test passed"
           else
