@@ -1,6 +1,9 @@
 name: Train
 
-on: pull_request
+on:
+  push:
+    branches:
+      - fail-both
 
 jobs:
   build:
