@@ -1,7 +1,7 @@
 name: Train
 
 on:
-  pull_request:
+  push:
     branches: 
       - '*'
 
@@ -27,4 +27,4 @@ jobs:
       run: |
         docker build -t ${IMAGE_NAME} .
         docker tag ${IMAGE_NAME} ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
-        docker push ${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
+        docker push ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
