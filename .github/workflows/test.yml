@@ -41,7 +41,7 @@ jobs:
 
       - name: Pull and Run the Docker Image 
         run: |
-          score=$(docker run --rm  ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
+          score=$(docker run --rm  ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION})
           if (( $(echo "$score > 0.50" | bc -l) )); then
             echo "Test passed"
           else
