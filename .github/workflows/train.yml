@@ -27,4 +27,8 @@ jobs:
       run: |
         docker build -t ${IMAGE_NAME} .
         docker tag ${IMAGE_NAME} ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
+<<<<<<< HEAD
         docker push ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
+=======
+        docker push ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/${IMAGE_NAME}:${VERSION}
+>>>>>>> a231a81bd708baaf38de725be7b236ae51f8044c

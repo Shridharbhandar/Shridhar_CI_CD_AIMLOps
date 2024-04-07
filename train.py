@@ -11,6 +11,9 @@ y = df['Disease'].to_numpy()
 labels = np.sort(np.unique(y))
 y = np.array([np.where(labels == x) for x in y]).flatten()
 
+<<<<<<< HEAD
+model == RandomForestClassifier().fit(X, y)
+=======
 #model = LogisticRegression().fit(X, y) #Score - 0.329
 model = RandomForestClassifier(n_estimators=100, random_state=42).fit(X, y)  # Score - 0.428
 
@@ -35,7 +38,7 @@ model = RandomForestClassifier(n_estimators=100, random_state=42).fit(X, y)  # S
 # # Train the model with best parameters
 # model = RandomForestClassifier(**best_params)
 # model.fit(X, y)
-
+>>>>>>> a231a81bd708baaf38de725be7b236ae51f8044c
 
 
 with open("model.pkl", 'wb') as f:
