@@ -25,8 +25,7 @@ jobs:
 
       - name: Fail if Train Workflow Failed
         if: >
-          ${{ github.event.workflow_run.conclusion != 'success' &&
-              steps.check_train_conclusion.outputs.result != 'success' }}
+          ${{ steps.check_train_conclusion.outputs.result != 'success' }}
         run: exit 1
           
 
