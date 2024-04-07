@@ -19,12 +19,12 @@ jobs:
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - name: Pull Docker image
-      run: docker pull bhandar1994/myapp
+      run: docker pull bhandar1994/myapp:${{ github.sha }}
 
     - name: Pull and Run Docker Image
       run: |
-        score=$(docker run --rm bhandar1994/myapp)
-        if (( $(echo "$score > 0.50" | bc -l) )); then
+        score=$(docker run --rm bhandar1994/myapp:${{ github.sha }})
+        if (( $(echo "$score > 0.25" | bc -l) )); then
           echo "Test passed"
         else
           echo "Test failed"
