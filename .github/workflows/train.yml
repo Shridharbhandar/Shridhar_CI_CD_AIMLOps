@@ -1,7 +1,7 @@
 name: Train
 
 on:
-  push:
+  pull_request:
     branches:
       - '*'
 
