@@ -21,7 +21,7 @@ jobs:
     - name: Pull Docker image
       run: docker pull bhandar1994/myapp:${{ github.sha }}
 
-    - name: Pull and Run Docker Image
+    - name: Pull and Run the Docker Image 
       run: |
         score=$(docker run --rm bhandar1994/myapp:${{ github.sha }})
         if (( $(echo "$score > 0.50" | bc -l) )); then
