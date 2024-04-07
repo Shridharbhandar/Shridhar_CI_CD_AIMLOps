@@ -12,7 +12,8 @@ labels = np.sort(np.unique(y))
 y = np.array([np.where(labels == x) for x in y]).flatten()
 
 
-model = RandomForestClassifier(n_estimators=250, random_state=42).fit(X, y)
+gbc = GradientBoostingClassifier(n_estimators=100, learning_rate=1, max_depth=25)
+model = gbc.fit(X,y)
 
 
 with open("model.pkl", 'wb') as f:
