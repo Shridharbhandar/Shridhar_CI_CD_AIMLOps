@@ -5,7 +5,6 @@ on:
     workflows: ["Train"]
     types:
       - completed
-      #- requested
 
 env:
   IMAGE_NAME: ai-mlops-assignment
