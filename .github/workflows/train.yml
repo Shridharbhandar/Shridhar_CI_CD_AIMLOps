@@ -3,9 +3,7 @@ name: Train
 on:
   push:
     branches:
-      - fail-both
-      - fail-one
-      - success
+      - '*'
 
 jobs:
   build:
